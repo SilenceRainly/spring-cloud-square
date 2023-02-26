@@ -18,8 +18,7 @@
 
 	<properties>
 		<revision>0.4.1</revision>
-		<spring-cloud-commons.version>3.1.7-SNAPSHOT</spring-cloud-commons.version>
-		<spring-cloud-sleuth.version>3.1.7-SNAPSHOT</spring-cloud-sleuth.version>
+		<spring-cloud-commons.version>4.0.1</spring-cloud-commons.version>
 
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
@@ -35,13 +34,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-sleuth-dependencies</artifactId>
-				<version>${spring-cloud-sleuth.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -54,6 +46,9 @@
 	<profiles>
 		<profile>
 			<id>spring</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<repositories>
 				<repository>
 					<id>spring-snapshots</id>
